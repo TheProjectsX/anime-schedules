@@ -49,7 +49,7 @@ def __season_from_date(date) -> tuple[str, int]:
 
 # Get next Season Info
 def __get_next_season() -> tuple[str, int]:
-    current_season, current_year = __season_from_date(datetime.mow())
+    current_season, current_year = __season_from_date(datetime.now())
 
     seasons = list(SEASONS_INFO.keys())
     next_season_index = (seasons.index(current_season) + 1) % len(seasons)
