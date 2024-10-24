@@ -8,10 +8,17 @@ Get Anime Schedule Information's via this simple python module!
 pip install git+https://github.com/TheProjectsX/anime-schedules.git
 ```
 
+#### Upgrade:
+
+```bash
+pip install anime-schedules --upgrade
+```
+
 ## Methods Available:
 
 -   validateSeasonInfo
 -   getCurrentSeason
+-   getNextSeason
 -   getSeasonOfDate
 -   getCurrentSeasonAnimeScheduled
 -   getAnimeScheduleOfSeason
