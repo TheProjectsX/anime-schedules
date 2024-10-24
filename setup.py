@@ -11,7 +11,7 @@ with open("requirements.txt") as f:
 
 
 setup(
-    name="Anime Schedule information API",
+    name="anime-schedules",
     version="1.0.0",
     url="https://github.com/TheProjectsX/anime-schedules",
     description="Get Anime Schedule Information easily!",
