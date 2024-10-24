@@ -1,7 +1,7 @@
 from datetime import datetime
 from dateutil import parser as dateparser
 from typing import Union
-import schedule_utils
+from . import schedule_utils
 
 ### Internal Function(s) Processed ###
 
