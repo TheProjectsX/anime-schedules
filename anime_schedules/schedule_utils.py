@@ -229,7 +229,7 @@ def __get_anime_schedule_data(
             "aired": {
                 "from": startDateTimestamp,
                 "to": None,
-                "string": f"{datetime.fromtimestamp(startDateTimestamp).strftime("%b %d, %Y") if startDateTimestamp else "?"} to ?",
+                "string": f"{datetime.fromtimestamp(startDateTimestamp).strftime('%b %d, %Y') if startDateTimestamp else '?'} to ?",
             },
             "next": {
                 "timestamp": nextEpisode,
