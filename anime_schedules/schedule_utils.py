@@ -274,6 +274,7 @@ def __get_anime_scheduled_by_time(hours=24, type="tv", language="english"):
         return {
             "success": False,
             "message": anime_schedule_data.get("message", "Server Busy"),
+            "error": anime_schedule_data.get("error", "Unknown"),
         }
 
     return_response = {

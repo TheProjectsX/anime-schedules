@@ -12,7 +12,7 @@ with open("requirements.txt") as f:
 
 setup(
     name="anime-schedules",
-    version="1.0.2",
+    version="1.0.3",
     url="https://github.com/TheProjectsX/anime-schedules",
     description="Get Anime Schedule Information easily!",
     author="TheProjectsX",
