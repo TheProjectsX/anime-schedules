@@ -286,12 +286,13 @@ def __get_anime_scheduled_by_time(hours=24, type="tv", language="english"):
     next24Hours = now + timedelta(hours=hours)
 
     for item in anime_schedule_data.get("data", []):
-        if not item.get("next", {}).get("timestamp"):
+        if type(item.get("next", {}).get("timestamp")) is not int:
             continue
 
         episode_date_time = datetime.fromtimestamp(
             item.get("next", {}).get("timestamp")
         )
+
         if now <= episode_date_time < next24Hours:
             return_response["data"].append(item)
         else:
