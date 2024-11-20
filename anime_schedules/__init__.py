@@ -93,7 +93,7 @@ def getCurrentSeasonAnimeScheduled(type="tv", sortby="popularity", language="eng
     season, year = schedule_utils.__season_from_date(datetime.now())
 
     animeScheduledData = schedule_utils.__get_anime_schedule_data(
-        season=season, year=year, type=type, sortby=sortby, language=language
+        season=season, year=year, anime_type=type, sortby=sortby, language=language
     )
     return animeScheduledData
 
@@ -116,7 +116,7 @@ def getAnimeScheduleOfSeason(
         return {"success": False, "message": msg}
 
     animeScheduledData = schedule_utils.__get_anime_schedule_data(
-        season=season, year=year, type=type, sortby=sortby, language=language
+        season=season, year=year, anime_type=type, sortby=sortby, language=language
     )
     return animeScheduledData
 
@@ -132,7 +132,7 @@ def getAnimeScheduleOfToday(type="tv", language="english"):
     """
 
     animeScheduledData = schedule_utils.__get_anime_scheduled_by_time(
-        hours=24, type=type, language=language
+        hours=24, anime_type=type, language=language
     )
     return animeScheduledData
 
@@ -153,6 +153,6 @@ def getAnimeScheduleOfNextHours(hours=24, type="tv", language="english"):
         return {"success": False, "message": "Invalid hours Given"}
 
     animeScheduledData = schedule_utils.__get_anime_scheduled_by_time(
-        hours=hours, type=type, language=language
+        hours=hours, anime_type=type, language=language
     )
     return animeScheduledData

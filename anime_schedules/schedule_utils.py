@@ -83,7 +83,7 @@ def __live_chart_base(path="", cookies={}):
 def __get_anime_schedule_data(
     season="",
     year: Union[str, int] = "",
-    type="tv",
+    anime_type="tv",
     sortby="popularity",
     language="english",
 ):
@@ -102,8 +102,8 @@ def __get_anime_schedule_data(
     }
 
     # Create path if Year, Season and Type is Declared
-    if year != "" and season != "" and type != "":
-        path = f"{season.lower()}-{year}/{type}"
+    if year != "" and season != "" and anime_type != "":
+        path = f"{season.lower()}-{year}/{anime_type}"
 
     # Get the Server Data
     server_response = __live_chart_base(path, cookies=cookies)
@@ -240,7 +240,7 @@ def __get_anime_schedule_data(
                 if isinstance(nextEpisode, int)
                 else "Aired" if nextEpisode == "Released" else "Not yet Aired"
             ),
-            "type": animeType.get(type),
+            "type": animeType.get(anime_type),
             "year": year,
             "season": season,
             "score": rating,
@@ -258,7 +258,7 @@ def __get_anime_schedule_data(
 
 
 # Get anime scheduled to release Today!
-def __get_anime_scheduled_by_time(hours=24, type="tv", language="english"):
+def __get_anime_scheduled_by_time(hours=24, anime_type="tv", language="english"):
     try:
         hours = int(hours)
     except Exception as e:
@@ -267,7 +267,11 @@ def __get_anime_scheduled_by_time(hours=24, type="tv", language="english"):
     season, year = __season_from_date(datetime.now())
 
     anime_schedule_data = __get_anime_schedule_data(
-        season=season, year=year, type=type, sortby="countdown", language=language
+        season=season,
+        year=year,
+        anime_type=anime_type,
+        sortby="countdown",
+        language=language,
     )
 
     if not anime_schedule_data.get("success"):

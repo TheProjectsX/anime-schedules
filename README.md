@@ -11,7 +11,7 @@ pip install git+https://github.com/TheProjectsX/anime-schedules.git
 #### Upgrade:
 
 ```bash
-pip install anime-schedules --upgrade
+pip uninstall anime-schedules && pip install git+https://github.com/TheProjectsX/anime-schedules.git
 ```
 
 ## Methods Available:
