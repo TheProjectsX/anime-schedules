@@ -300,6 +300,6 @@ def __get_anime_scheduled_by_time(hours=24, anime_type="tv", language="english")
         if now <= episode_date_time < next24Hours:
             return_response["data"].append(item)
         else:
-            break
+            continue
 
     return return_response
